@@ -1,0 +1,113 @@
+" Use command ':actionlist' in Rider to see available actions
+set number
+set relativenumber
+set scrolloff=15
+set incsearch
+
+" Map leader to space bar"
+let mapleader=" "
+
+" Map action - Quit input mode and call SaveAll"
+imap <C-s> <Esc>:w<CR>
+imap <C-a> <Action>(copilot.applyInlays)
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq<CR>
+
+" Go declaration"
+map gd <Action>(GotoDeclaration)
+map gr <Action>(ShowUsages)
+
+" Show quick documentation"
+map gl <Action>(QuickJavaDoc)
+map gv <Action>(ShowErrorDescription)
+
+" Close tab"
+map <Leader>q :q<CR>
+
+" Format code"
+map <Leader>f :action ReformatCode<CR>
+
+" Rename variable"
+map <Leader>r :action RenameElement<CR>
+
+" Comment By Line"
+nmap <Leader>/ :action CommentByLineComment<CR>
+vmap <Leader>/ :action CommentByLineComment<CR>
+
+" Tab in visual mode"
+vmap <Tab> >gv
+ 
+" Go to previous next error in normal or visual mode using '[d' or ']d'"
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
+
+" Go to previous or next tab in normal or visual mode using shift + h or shift + l"
+map <S-h> :tabprevious<CR>
+map <S-l> :tabnext<CR>
+
+" Increase font size
+map <C-=> :action EditorIncreaseFontSize<CR>
+map <C--> :action EditorDecreaseFontSize<CR>
+
+" Mapping to mimic BufferExplorer
+nmap <Leader>e :action Switcher<CR>
+nmap <Leader>fb :action RecentFiles<CR>
+nmap <Leader>fw :action FindInPath<CR>
+nmap <Leader>fe :action SearchEverywhere<CR>
+
+" Splits
+nmap <Leader>[ :action MoveTabRight<CR>
+nmap <Leader>] :action UnsplitAll<CR>
+nmap <C-k> :action PrevSplitter<CR>
+nmap <C-l> :action StretchSplitToRight<CR>
+nmap <C-j> :action NextSplitter<CR>
+nmap <C-h> :action StretchSplitToLeft<CR>
+nmap <C-m> :action MoveEditorToOppositeTabGroup<CR>
+
+" Run
+nmap <Leader>dr :action Run<CR>
+
+" Git
+nmap <Leader>gf :action Git.Fetch<CR>
+nmap <Leader>gp :action Vcs.Push<CR>
+nmap <Leader>gb :action Git.Branches<CR>
+nmap <Leader>gu :action Vcs.UpdateProject<CR>
+nmap <Leader>gh :action Annotate<CR>
+
+" Debugging
+nmap <Leader>dw :action BuildSolutionAction<CR>
+nmap <Leader>dd :action Debug<CR>
+nmap <Leader>da :action RiderDebuggerApplyEncChagnes<CR>
+nmap <Leader>df :action Stop<CR>
+nmap <Leader>dc :action Resume<CR>
+nmap <Leader>dv :action JumpToStatement<CR>
+nmap <Leader>dj :action StepOver<CR>
+nmap <Leader>db :action ToggleLineBreakpoint<CR>
+nmap <Leader>ds :action ActivateDebugToolWindow<CR>
+nmap <Leader>dt :action JS.TypeScript.Compile<CR>
+
+" Folding
+nmap <Leader>ff :action ExpandCollapseToggleAction<CR>
+nmap <Leader>fs :action RiderCollapseToDefinitions<CR>
+nmap <Leader>fa :action ExpandAllRegions<CR>
+nmap <Leader>fc :action CollapseDocComments<CR>
+
+" Bookmarks
+nmap <Leader>mm :action ToggleBookmark<CR>
+nmap <Leader>ms :action ShowBookmarks<CR>
+nmap <Leader>mt :action ActivateTODOToolWindow<CR>
+nmap <Leader>mb :action ViewBreakpoints<CR>
+
+" Unit Tests
+nmap <Leader>ts :action ActivateUnitTestsToolWindow<CR>
+nmap <Leader>tr :action Rider.UnitTesting.RunContext<CR>
+
+" Movement
+nmap [m :action MethodUp<CR>
+nmap ]m :action MethodDown<CR>
+nmap <C-o> :action Back<CR>
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv
+vnoremap K :m '<-2<CR>gv
