@@ -109,5 +109,5 @@ nmap ]m :action MethodDown<CR>
 nmap <C-o> :action Back<CR>
 
 " Move visual block
-vnoremap J :m '>+1<CR>gv
-vnoremap K :m '<-2<CR>gv
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
