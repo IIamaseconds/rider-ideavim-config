@@ -116,4 +116,7 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap <TAB> >gv
 vnoremap <S-TAB> <gv
 
+" Un/indent in normal mode
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
 
