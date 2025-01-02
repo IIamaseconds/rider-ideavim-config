@@ -120,3 +120,5 @@ vnoremap <S-TAB> <gv
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
 
+" Copy to clipboard
+vnoremap <Leader>y "+y
