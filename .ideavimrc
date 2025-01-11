@@ -47,8 +47,8 @@ map <S-h> :tabprevious<CR>
 map <S-l> :tabnext<CR>
 
 " Increase font size
-map <C-=> :action EditorIncreaseFontSize<CR>
-map <C--> :action EditorDecreaseFontSize<CR>
+map <C-=> :action EditorIncreaseFontSizeGlobal<CR>
+map <C--> :action EditorDecreaseFontSizeGlobal<CR>
 
 " Mapping to mimic BufferExplorer
 nmap <Leader>e :action Switcher<CR>
