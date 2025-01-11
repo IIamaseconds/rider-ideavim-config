@@ -7,9 +7,12 @@ set incsearch
 " Map leader to space bar"
 let mapleader=" "
 
+" Copilot
+imap <C-r> <Action>(copilot.requestCompletions)
+imap <C-a> <Action>(copilot.applyInlays)
+
 " Map action - Quit input mode and call SaveAll"
 imap <C-s> <Esc>:w<CR>
-imap <C-a> <Action>(copilot.applyInlays)
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq<CR>
