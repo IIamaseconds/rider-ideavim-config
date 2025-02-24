@@ -1,6 +1,7 @@
 " Use command ':actionlist' in Rider to see available actions
 set number
 set relativenumber
+set ignorecase smartcase
 set scrolloff=15
 set incsearch
 
