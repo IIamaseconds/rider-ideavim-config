@@ -1,9 +1,12 @@
 " Use command ':actionlist' in Rider to see available actions
+Plug 'terryma/vim-multiple-cursors'
+
 set number
 set relativenumber
-set ignorecase smartcase
-set scrolloff=15
+set scrolloff=8
 set incsearch
+
+set multiple-cursors
 
 " Map leader to space bar"
 let mapleader=" "
@@ -20,7 +23,6 @@ map Q gq<CR>
 
 " Go declaration"
 map gd <Action>(GotoDeclaration)
-map gi <Action>(GotoImplementation)
 map gr <Action>(ShowUsages)
 
 " Show quick documentation"
@@ -117,13 +119,29 @@ nmap <C-o> :action Back<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" Un/indent visual block
+" Un/Indent visual block
 vnoremap <TAB> >gv
 vnoremap <S-TAB> <gv
 
-" Un/indent in normal mode
+" Un/Indent in normal mode
 nnoremap <TAB> >>
 nnoremap <S-TAB> <<
 
 " Copy to clipboard
 vnoremap <Leader>y "+y
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+" Feel free to pick your own mappings that are not affected. I like to use <leader>
+nmap <leader><C-n> <Plug>AllWholeOccurrences
+xmap <leader><C-n> <Plug>AllWholeOccurrences
+nmap <leader>g<C-n> <Plug>AllOccurrences
+xmap <leader>g<C-n> <Plug>AllOccurrences
