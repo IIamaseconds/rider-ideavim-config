@@ -5,6 +5,7 @@ set number
 set relativenumber
 set scrolloff=8
 set incsearch
+set ignorecase smartcase
 
 set multiple-cursors
 
@@ -23,6 +24,7 @@ map Q gq<CR>
 
 " Go declaration"
 map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
 map gr <Action>(ShowUsages)
 
 " Show quick documentation"
