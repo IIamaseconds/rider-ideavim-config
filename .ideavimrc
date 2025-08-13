@@ -62,6 +62,7 @@ map <C--> :action EditorDecreaseFontSizeGlobal<CR>
 " Mapping to mimic BufferExplorer
 nmap <Leader>e :action Switcher<CR>
 nmap <Leader>fb :action RecentFiles<CR>
+nmap <Leader>fo :action RecentFiles<CR>
 nmap <Leader>fw :action FindInPath<CR>
 nmap <Leader>fe :action SearchEverywhere<CR>
 
@@ -147,3 +148,4 @@ xmap <C-p> <Plug>RemoveOccurrence
 " xmap <leader><C-S-n> <Plug>AllWholeOccurrences
 nmap <C-S-n> <Plug>AllOccurrences
 xmap <C-S-n> <Plug>AllOccurrences
+
