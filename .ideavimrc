@@ -24,8 +24,8 @@ map Q gq<CR>
 
 " Go declaration"
 map gd <Action>(GotoDeclaration)
-map gi <Action>(GotoImplementation)
 map gr <Action>(ShowUsages)
+map gi <Action>(GotoImplementation)
 
 " Show quick documentation"
 map gl <Action>(QuickJavaDoc)
@@ -33,6 +33,10 @@ map gv <Action>(ShowErrorDescription)
 
 " Close tab"
 map <Leader>q :q<CR>
+map <Leader>c :q<CR>
+map <Leader>bc <Action>(CloseAllEditorsButActive)
+
+map <Leader>bc 
 
 " Format code"
 map <Leader>f :action ReformatCode<CR>
@@ -133,7 +137,7 @@ nnoremap <S-TAB> <<
 " Copy to clipboard
 vnoremap <Leader>y "+y
 
-" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+" Remap multiple-cur
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
 nmap g<C-n> <Plug>NextOccurrence
@@ -141,11 +145,5 @@ xmap g<C-n> <Plug>NextOccurrence
 xmap <C-x> <Plug>SkipOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
 
-" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
-" <A-n> is used to enter accented text e.g. ñ
-" Feel free to pick your own mappings that are not affected. I like to use <leader>
-" nmap <leader><C-S-n> <Plug>AllWholeOccurrences
-" xmap <leader><C-S-n> <Plug>AllWholeOccurrences
 nmap <C-S-n> <Plug>AllOccurrences
 xmap <C-S-n> <Plug>AllOccurrences
-
