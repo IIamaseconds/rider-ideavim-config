@@ -137,7 +137,7 @@ nnoremap <S-TAB> <<
 " Copy to clipboard
 vnoremap <Leader>y "+y
 
-" Remap multiple-cur
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
 nmap <C-n> <Plug>NextWholeOccurrence
 xmap <C-n> <Plug>NextWholeOccurrence
 nmap g<C-n> <Plug>NextOccurrence
@@ -147,3 +147,4 @@ xmap <C-p> <Plug>RemoveOccurrence
 
 nmap <C-S-n> <Plug>AllOccurrences
 xmap <C-S-n> <Plug>AllOccurrences
+
